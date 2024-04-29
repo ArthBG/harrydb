@@ -1,7 +1,7 @@
-# API de Gerenciamento de Bruxos e Varinhas
+# Back-end de Gerenciamento de Bruxos e Varinhas
 ![harry-potter-all-characters](https://github.com/ArthBG/harrydb/assets/123407087/1a177983-4259-48d1-b606-fedd2f4a5032)
 
-Esta API permite o gerenciamento de bruxos e varinhas do universo de Harry Potter. Ela oferece operações para criar, ler, atualizar e deletar informações sobre bruxos e suas varinhas.
+Esta projeto permite o gerenciamento de bruxos e varinhas do universo de Harry Potter. Ela oferece operações para criar, ler, atualizar e deletar informações sobre bruxos e suas varinhas.
 
 ## Tecnologias Utilizadas
 
@@ -13,6 +13,7 @@ Esta API permite o gerenciamento de bruxos e varinhas do universo de Harry Potte
 ## Rotas
 
 ### Bruxos
+![hat](https://github.com/ArthBG/harrydb/assets/123407087/83656e4a-d749-4044-9179-0de9fabf828a)
 
 - **GET /bruxos**: Retorna todos os bruxos cadastrados.
 - **GET /bruxos/:id**: Retorna as informações de um bruxo específico pelo seu ID.
@@ -22,6 +23,7 @@ Esta API permite o gerenciamento de bruxos e varinhas do universo de Harry Potte
 - **DELETE /bruxos/:id**: Deleta um bruxo específico pelo seu ID.
 
 ### Varinhas
+![wand](https://github.com/ArthBG/harrydb/assets/123407087/5354d980-d783-4507-b9f4-d4590a6410cd)
 
 - **GET /varinhas**: Retorna todas as varinhas cadastradas.
 - **GET /varinhas/:id**: Retorna as informações de uma varinha específica pelo seu ID.
@@ -61,4 +63,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou env
 
 ---
 
-Com esta API, você pode gerenciar facilmente informações sobre bruxos e varinhas do universo de Harry Potter em seu próprio banco de dados. Divirta-se explorando! 🧙‍♂️🔮
+Com esta Back-end, você pode gerenciar facilmente informações sobre bruxos e varinhas do universo de Harry Potter em seu próprio banco de dados. Divirta-se explorando! 🧙‍♂️🔮
