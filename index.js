@@ -76,7 +76,7 @@ app.post('/bruxos', async (req, res) => {
         const query = 'INSERT INTO bruxos (nome, idade, casa, habilidade, status_sangue, patrono) VALUES ($1, $2, $3, $4, $5, $6)';
         const values = [nome, idade, casal, habilidade, status_sanguel, patrono];
         try {
-        if(!nome || !idade || !casa || !habilidade || !status_sangue || !patrono) {
+        if(!nome || !idade || !casal || !habilidade || !status_sanguel || !patrono) {
             return res.status(400).json({
                 status: 'error',
                 message: 'Todos os campos são obrigatórios',
@@ -108,23 +108,25 @@ app.post('/bruxos', async (req, res) => {
 app.put('/bruxos/:id', async (req, res) => {
     const { id } = req.params;
     const { nome, idade, casa, habilidade, status_sangue, patrono } = req.body;
+    const casal = casa.toLowerCase();
+    const status_sanguel = status_sangue.toLowerCase();
     const query = 'UPDATE bruxos SET nome = $1, idade = $2, casa = $3, habilidade = $4, status_sangue = $5, patrono = $6 WHERE id = $7';
-    const values = [nome, idade, casa, habilidade, status_sangue, patrono, id]; 
+    const values = [nome, idade, casal, habilidade, status_sanguel, patrono, id]; 
 
     try {
-        if(!nome || !idade || !casa || !habilidade || !status_sangue || !patrono) {
+        if(!nome || !idade || !casal || !habilidade || !status_sanguel || !patrono) {
             return res.status(400).json({
                 status: 'error',
                 message: 'Todos os campos são obrigatórios',
             });
         }
-        if(casa !== 'grifinória' && casa !== 'sonserina' && casa !== 'corvinal' && casa !== 'lufa-lufa' && casa !== 'grifinoria' && casa !== 'sonserina' && casa !== 'corvinal' && casa !== 'lufa lufa') {
+        if(casal !== 'grifinória' && casal !== 'sonserina' && casal !== 'corvinal' && casal !== 'lufa-lufa' && casal !== 'grifinoria' && casal !== 'sonserina' && casal !== 'corvinal' && casal !== 'lufa lufa') {
             return res.status(400).json({
                 status: 'error',
                 message: 'Casa inválida',
             });
         }
-        if(status_sangue !== 'puro' && status_sangue !== 'mestiço' && status_sangue !== 'trouxa' && status_sangue !== 'puro' && status_sangue !== 'mestico' && status_sangue !== 'trouxas') {
+        if(status_sanguel !== 'puro' && status_sanguel !== 'mestiço' && status_sanguel !== 'trouxa' && status_sanguel !== 'puro' && status_sanguel !== 'mestico' && status_sanguel !== 'trouxas') {
             return res.status(400).json({
                 status: 'error',
                 message: 'Status de sangue inválido',
