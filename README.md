@@ -1,7 +1,7 @@
 # Back-end de Gerenciamento de Bruxos e Varinhas
 ![harry-potter-all-characters](https://github.com/ArthBG/harrydb/assets/123407087/1a177983-4259-48d1-b606-fedd2f4a5032)
 
-Esta projeto permite o gerenciamento de bruxos e varinhas do universo de Harry Potter. Ela oferece operações para criar, ler, atualizar e deletar informações sobre bruxos e suas varinhas.
+Este projeto permite o gerenciamento de bruxos e varinhas do universo de Harry Potter. Ela oferece operações para criar, ler, atualizar e deletar informações sobre bruxos e suas varinhas.
 
 ## Tecnologias Utilizadas
 
