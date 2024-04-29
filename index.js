@@ -48,7 +48,7 @@ app.get('/bruxos/:id', async (req, res) => {
 app.get('/bruxos/nome/:nome', async (req, res) => {
     try {
         const { nome } = req.params;
-        const result = await pool.query('SELECT * FROM bruxos WHERE nome = $1', [nome]);
+        const result = await pool.query('SELECT * FROM bruxos WHERE LOWER(nome) LIKE $1', [`%${nome.toLowerCase()}%`]);
         if (result.rowCount === 0) {
             res.status(404).json({
                 status: 'error',
@@ -57,10 +57,14 @@ app.get('/bruxos/nome/:nome', async (req, res) => {
         }
         res.json({
             status: 'success',
-            bruxo: result.rows[0],
+            bruxo: result.rows,
         });
     } catch (error) {
         console.error('Erro ao encontrar bruxo:', error);
+        res.status(500).send({
+            status: 'error',
+            message: 'Erro ao encontrar bruxo',
+        });
     }
 });
 
